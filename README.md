@@ -1,16 +1,45 @@
-# flutter_custom_font
+# Flutter Custom Font
 
-Use custom fonts in flutter application
+In order to work with custom font, you need to download fonts from https://fonts.google.com/ or any other source.
 
-## Getting Started
+# 1. Import fonts in your project
 
-This project is a starting point for a Flutter application.
+Create /fonts folder on your main director of project and paste your font in that directory.
 
-A few resources to get you started if this is your first Flutter project:
+<your project directory>/
+  fonts/
+    Anton-Regular.ttf
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+# 2. Declaration fonts in pubspec.yaml
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+  fonts:
+    - family: Roboto
+      fonts:
+      - asset: fonts/Roboto-Regular.ttf
+        weight: 400
+    - family: Anton
+      fonts:
+      - asset: fonts/Anton-Regular.ttf
+        weight: 400
+ 
+ # 3. Set a font as the default
+ 
+ you can to set default font for your entire application as below
+ 
+ MaterialApp(
+  title: 'Custom Fonts',
+  // Set Raleway as the default app font
+  theme: ThemeData(fontFamily: 'Anton'),
+  home: MyHomePage(),
+);
+ 
+# 4. Use the font in a specific Widget
+
+Text(
+  'Roboto Mono sample',
+  style: TextStyle(fontFamily: 'RobotoMono'),
+);
+
+
+# Fonts
+Download font from https://fonts.google.com/
